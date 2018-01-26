@@ -1,0 +1,6 @@
+new_number=int (input("Введи любое число"))
+new_number2=int(input("Введи еще одно число"))
+print("сумма", new_number + new_number2)
+print("разность",new_number - new_number2)
+print("произведение",new_number  * new_number2)
+print("частное",new_number / new_number2)
