@@ -1,0 +1,24 @@
+#name {
+	color: rgb(255, 0, 0);
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	font-family: matura mt script capitals;
+	background-color: black;
+	text-decoration: line-through;
+}
+
+#age {
+	color: SpringGreen;
+	text-align: right;
+	font-family: webdings;
+}
+
+.info {
+	text-decoration: underline;
+	color: blue;
+	text-align: justify;
+	font-family: segoe script;
+	background-color: DarkSlateGray;
+}
