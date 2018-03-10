@@ -1,0 +1,18 @@
+.usual {
+	width: 100px;
+	height: 100px;
+	background-color: pink;
+	text-align: center;
+	margin: 20px;
+	border: 2px solid black;
+	position: relative;
+	left: 300px;
+	top: 200px;
+}
+
+.us2 {
+	position: fixed;
+}
+.fish {
+	font-size: 50px;
+}

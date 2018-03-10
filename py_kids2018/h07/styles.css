@@ -1,0 +1,19 @@
+.main {
+	box-sizing: border-box;
+	background-color: wheat;
+	font-weight: bold;
+	font-size: 24px;
+	border: 2px solid black;
+	height: 200px;
+	width: 200px;
+	padding: 30px;
+	margin: 100px 300px 40px 10px;
+}
+.main_title {
+	/*margin-left: 550px;*/
+	/*margin: auto;*/
+	margin-left: 50%;
+	width: 400px;
+	background-color: pink;
+	text-align: center;
+}

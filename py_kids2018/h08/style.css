@@ -1,0 +1,25 @@
+.boy{
+	border: 3px solid red;	
+	background-color: green;
+	font-size: 30px;
+	color: black;
+	height: 300px;
+	width: 400px;
+	font-family: matura mt script capitals;
+
+
+}
+.boy1{
+	margin-left: 1100px;
+}
+.boy2{ 
+	margin-left: 550px;
+}
+body {
+	background: -moz-linear-gradient(top, rgba(29,142,73,1) 0%, rgba(243,247,7,0.92) 35%, rgba(237,49,49,0.89) 49%, rgba(16,61,12,0.85) 67%, rgba(16,61,12,0.77) 98%);
+	background: -webkit-linear-gradient(top, rgba(29,142,73,1) 0%,rgba(243,247,7,0.92) 35%,rgba(237,49,49,0.89) 49%,rgba(16,61,12,0.85) 67%,rgba(16,61,12,0.77) 98%);
+	background: linear-gradient(to bottom, rgba(29,142,73,1) 0%,rgba(243,247,7,0.92) 35%,rgba(237,49,49,0.89) 49%,rgba(16,61,12,0.85) 67%,rgba(16,61,12,0.77) 98%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d8e49', endColorstr='#c4103d0c',GradientType=0 );
+	background-size: 100%;
+}
+
