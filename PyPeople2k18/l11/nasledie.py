@@ -24,8 +24,8 @@ class Revolver(Guns):
 
 	def sound(self):
 		print('Тарарах-тарах')
-
-water_gun = Weapon('World', -100, 5)
+country = input('Введите страну-производителя: ')
+water_gun = Weapon(country, int(input('Введите урон: ')), 5)
 water_gun.make_damage()
 desert_eagle = Guns('USA', 30, 50)
 print(desert_eagle.country)
