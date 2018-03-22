@@ -1,0 +1,10 @@
+.new {
+	height: 100px;
+	width: 200px;
+	background-color: yellow;
+	border: 2px solid black;
+}
+
+.new:hover {
+	background-color: green;
+}

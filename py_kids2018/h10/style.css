@@ -1,0 +1,19 @@
+.new {
+	font-size: 35px;
+	color: rgb(155, 44, 66);
+	font-weight: bold; 
+	font-family: matura mt script capitals;
+	text-align: center;
+}
+
+.text_block {
+	font-size: 40px;
+	/*width: 1000px;*/
+	margin: auto;
+}
+
+img {
+	width: 600px;
+	float: left;
+	margin-right: 10px;
+}

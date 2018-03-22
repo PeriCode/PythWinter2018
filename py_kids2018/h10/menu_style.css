@@ -1,0 +1,21 @@
+.menu {
+	list-style-type: none;
+	text-align: center;
+}
+
+li {
+	padding: 10px;
+	display: inline-block;
+	height: 30px;
+	width: 200px;
+	background-color: yellow;
+	border: 2px solid black;
+}
+a {
+	text-decoration: none;
+	font-size: 25px; 
+	color: blue;
+}
+a:visited {
+	color: blue;
+}
