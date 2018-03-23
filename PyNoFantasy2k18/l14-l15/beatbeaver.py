@@ -60,14 +60,12 @@ class Beat_the_beaver(QWidget):
 		self.show()
 
 
-	# Запуск игры
 	def startGame(self):
 		self.timer.start(500, self)
 		self.count.setText("0")
 		self.runButton.setEnabled(False)
 		self.time.setText("30")
 
-	# Срабатывание таймера
 	def timerEvent(self, e):
 		self.clearFace()
 		self.showFace()
@@ -84,19 +82,16 @@ class Beat_the_beaver(QWidget):
 			temp_time = int(self.time.text()) - 1
 			self.time.setText(str(temp_time))
 
-	# Крот выскочил из одной норки
 	def showFace(self):
 		number = random.randint(0, 8)
 		self.holes[number].setText("1")
 		self.holes[number].setIcon(QIcon("beaver.png"))
 		self.current = number
 
-	# Крот обратно спрятался
 	def clearFace(self):
 		self.holes[self.current].setText("0")
 		self.holes[self.current].setIcon(QIcon("hole.png"))
 
-	# Действие, срабатывающие при нажатии на одну из кнопок (норок)
 	def doAction(self):
 		sender = self.sender()
 		if sender.text() == "1":
