@@ -1,0 +1,18 @@
+.main_menu {
+	list-style-type: none;
+}
+
+.main_part {
+	display: inline-block;
+	position: relative;
+}
+
+.sub_menu {
+	display: none;
+}
+
+.main:hover .sub_menu {
+	display: block;
+	position: absolute;
+	top: 100%;
+}

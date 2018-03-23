@@ -12,7 +12,7 @@ import random
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QGridLayout
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import QSize
+from PyQt5.QtCore import QSize, QBasicTimer
 
 class Beat_the_beaver(QWidget):
 	def __init__(self):
@@ -20,6 +20,9 @@ class Beat_the_beaver(QWidget):
 		self.initUI()
 
 	def initUI(self):
+		self.timer = QBasicTimer()
+		self.step = 0
+
 		grid = QGridLayout()
 		grid.setSpacing(10)
 
@@ -40,31 +43,66 @@ class Beat_the_beaver(QWidget):
 				x += 1
 				y = 0
 
-		self.count = 0
+		self.count = QLabel('0')
+		self.time = QLabel('30')
+		self.runButton = QPushButton('Начать')
 
+		grid.addWidget(self.count, x + 1, 0)
+		grid.addWidget(self.time, x + 1, 1)
+		grid.addWidget(self.runButton, x + 1, 2)
 
-		self.showFace()
+		self.runButton.clicked.connect(self.startGame)
+
 		self.setLayout(grid)
 
 		self.setGeometry(50, 50, 650, 850)
 		self.setWindowTitle('Бей бобра')
 		self.show()
 
+
+	# Запуск игры
+	def startGame(self):
+		self.timer.start(500, self)
+		self.count.setText("0")
+		self.runButton.setEnabled(False)
+		self.time.setText("30")
+
+	# Срабатывание таймера
+	def timerEvent(self, e):
+		self.clearFace()
+		self.showFace()
+
+		if self.step >= 60:
+			self.timer.stop()
+			self.step = 0
+			self.clearFace()
+			return
+
+		self.step += 1
+
+		if self.step % 2:
+			temp_time = int(self.time.text()) - 1
+			self.time.setText(str(temp_time))
+
+	# Крот выскочил из одной норки
 	def showFace(self):
 		number = random.randint(0, 8)
 		self.holes[number].setText("1")
 		self.holes[number].setIcon(QIcon("beaver.png"))
 		self.current = number
 
+	# Крот обратно спрятался
 	def clearFace(self):
 		self.holes[self.current].setText("0")
 		self.holes[self.current].setIcon(QIcon("hole.png"))
 
-
+	# Действие, срабатывающие при нажатии на одну из кнопок (норок)
 	def doAction(self):
 		sender = self.sender()
 		if sender.text() == "1":
-			self.count += 1
+			# self.count += 1
+			temp_count = int(self.count.text()) + 1
+			self.count.setText(str(temp_count))
 			self.clearFace()
 
 

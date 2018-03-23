@@ -10,7 +10,8 @@ from random import randint
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
 from PyQt5.QtWidgets import QGridLayout, QLabel
 from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import QSize
+from PyQt5.QtCore import QSize, QBasicTimer
+
 
 class BeatTheSleeper(QWidget):
 	def __init__(self):
@@ -18,6 +19,9 @@ class BeatTheSleeper(QWidget):
 		self.initUI()
 
 	def initUI(self):
+		self.timer = QBasicTimer()
+		self.steps = 0
+
 		self.last = 0
 		self.scores = 0
 
@@ -40,12 +44,43 @@ class BeatTheSleeper(QWidget):
 				x += 1
 				y = 0
 
-		self.jumpSleeper()
+		self.scores = QLabel("0")
+		self.time = QLabel("20")
+		self.startButton = QPushButton('Начать')
+
+		grid.addWidget(self.scores, 3, 0)
+		grid.addWidget(self.time, 3, 1)
+		grid.addWidget(self.startButton, 3, 2)
+		self.startButton.clicked.connect(self.startGame)
 		
 		self.setLayout(grid)
-		self.setGeometry(100, 100, 650, 650)
+		self.setGeometry(100, 100, 850, 850)
 		self.setWindowTitle('Саид бьет кротов из открытого космоса')
 		self.show()
+
+
+	def startGame(self):
+		self.timer.start(500, self)
+		self.scores.setText("0")
+		self.startButton.setEnabled(False)
+
+	def timerEvent(self, e):
+		self.hideSleeper()
+		self.jumpSleeper()
+
+		if self.steps >= 40:
+			self.timer.stop()
+			self.startButton.setEnabled(True)
+			self.time.setText("20")
+			self.steps = 0
+			self.hideSleeper()
+			return
+
+		self.steps += 1
+
+		if self.steps % 2 == 0:
+			temp_time = int(self.time.text()) - 1
+			self.time.setText(str(temp_time))
 
 
 	def jumpSleeper(self):
@@ -62,7 +97,8 @@ class BeatTheSleeper(QWidget):
 		sender = self.sender()
 		if sender.text() == "Active":
 			self.hideSleeper()
-			self.scores += 1
+			temp_scores = int(self.scores.text()) + 1
+			self.scores.setText(str(temp_scores))
 
 
 app = QApplication(sys.argv)
