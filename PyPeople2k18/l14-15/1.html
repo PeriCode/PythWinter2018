@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>hasy</title>
+<style>
+
+.hasy {	/* Круг для часов */
+  position: relative;
+  width: 100px;
+  height: 100px;
+  /*margin: 5em;*/
+  border: 4px solid #48d1cc;
+  border-radius: 50%;
+  }
+
+.minutes { 	/* Минутная стрелка */ 
+  position: absolute;	/*Позиционируем относительно .hasy */
+  width: 3px;	/* Толщина стрелки */	
+  height: 35px;	/* Длина стрелки */	
+  left: 51px;	/*Положение стрелки*/	
+  top: 16px;	 
+  background: #24C0BA;
+  animation: now 1600s infinite steps(1600);	/* Скорость и движение стрелки */		
+  transform-origin: 0 34px;	/* Точка относительно которой вращается стрелка */	
+  }
+  
+.has {
+  position: absolute;
+  width: 4px;
+  height: 28px;
+  left: 50px;
+  top: 20px;
+  background: #009B95;
+  animation: nov 43200s infinite steps(43200);
+  transform-origin: 0 29px;
+  }
+  
+.sekundes {
+  position: absolute;
+  width: 2px;
+  height: 45px;
+  left: 51px;
+  top: 4px;
+  background: #48d1cc;
+  animation: nev 60s infinite steps(60);
+  transform-origin: 0 45px;
+ }
+
+@keyframes nev {
+  100%{
+   transform: rotate(360deg); /* Стрелка делает полный круг */
+  }
+}
+
+@keyframes nov {
+  100%{
+   transform: rotate(360deg);
+  }
+}
+
+@keyframes now {
+  100%{
+   transform: rotate(360deg);
+  }
+}
+
+.onen, .threen, .sixn, .ninen { /* Цифры на циферблате */
+    position: absolute;
+	font-weight: bold;
+	font-size: 18px;
+	color: #48d1cc;
+} 
+
+.onen {
+	top: 3px;
+	left: 41px;
+}
+
+.threen {
+	top: 43px;
+	left: 85px;
+}
+
+.sixn {
+	top: 78px;
+	left: 43px;
+}
+
+.ninen {
+	top: 43px;
+	left: 5px;
+}
+
+/*.sentr {	
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	top: 42px;
+	left: 44px;
+	background: #009B95;
+}*/
+</style>
+</head>
+<body>
+  <div class="hasy">
+	<div class="onen">12</div>
+	<div class="threen">3</div>
+	<div class="sixn">6</div>
+	<div class="ninen">9</div>
+	<div class="sekundes"></div>
+	<div class="minutes"></div>
+	<div class="has"></div>
+	<div class="sentr"></div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+.cub {
+	height: 150px;
+	width: 150px;
+	border: 2px solid black;
+	animation: medium 20s ease infinite;
+}
+
+
+@keyframes medium {
+	0% {
+		background-color: yellow;
+		transform: translate(0, 0);
+	}
+
+	25% {
+		background-color: red;
+		transform: translate(1200px, 0) rotate(90deg);
+	}
+
+	50% {
+		background-color: blue;
+		transform: translate(1200px, 500px) rotate(180deg);
+	}
+
+	75% {
+		background-color: green;
+		transform: translate(0, 500px) rotate(270deg);
+	}
+
+	100% {
+		background-color: yellow;
+		transform: translate(0, 0) rotate(360deg);
+	}
+}	
+
+
+
+
+@keyframes simple {
+	from {
+		transform: translateX(0px);
+	}
+	to {
+		transform: translateX(600px);
+	}
+}

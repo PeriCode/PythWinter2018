@@ -1,0 +1,22 @@
+.plate img {
+	width: 400px;
+}
+.plate {
+	display: inline-block;
+	margin: 10px;
+	vertical-align: top;
+	position: relative;
+	height: 400px;
+	width: 500px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+} 
+
+.plate:hover {
+	transform: scale(1.2);
+}
+.plate div {
+	font-family: ARIAL BLACK;
+	text-align: center;
+	position: absolute;
+}

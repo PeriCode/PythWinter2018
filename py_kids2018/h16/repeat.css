@@ -1,0 +1,31 @@
+.r {
+position: relative;
+height: 100px;
+width: 100px;
+left: 1400px;
+animation: ping 3s ease;
+}
+.e {
+height: 100px;
+width: 100px;
+transform: translateX(-100px);
+animation: islam 3s ease;
+}
+@keyframes islam {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(598px);
+	}
+	
+}
+
+@keyframes ping {
+	0% {
+		transform: translateX(0px);
+	}
+	100% {
+		transform: translateX(-598px);
+	}
+}

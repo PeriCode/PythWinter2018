@@ -1,0 +1,42 @@
+.cub {
+	height: 200px;
+	width: 200px;
+	border: 2px solid black;
+}
+
+.cub1 {
+	background-color: yellow;
+	transform: translateX(500px);
+}
+
+.cub2 {
+	background-color: green;
+	transform: translateY(-100px);
+}
+
+.cub3 {
+	background-color: red;
+	transform: scale(0.5, 3);
+}
+
+.cub4 {
+	background-color: blue;
+	transform: rotate(120deg);
+}
+
+.cub5 {
+	background-color: white;
+	transform: translateX(400px) scale(0.25, 0.25);
+}
+
+.cub6 {
+	transition: transform;
+}
+
+.cub6:hover {
+	background-color: black;
+	transform: translateX(500px);
+	transition-duration: 5s;
+	transition-timing-function: linear;
+	transition-delay: 1s;
+}
