@@ -1,0 +1,10 @@
+<user_info>
+	<name info='original name'>Kurban</name>
+	<surname>Magomedov</surname>
+	<age>12</age>
+	<adress>
+		<country>Russia</country>
+		<city>Makhachkala</city>
+		<street>A.Kadirova</street>
+	</adress>
+</user_info>
