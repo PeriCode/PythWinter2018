@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS first lesson</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div id="new" onclick="eye()">Ислам - топ шутник на Учхозе</div>
+	<button onclick="red_text()">Красный</button>
+	<button onclick="green_text()">Зеленый</button>
+
+	<script type="text/javascript">
+		// alert('Доброе утро!')
+		var joker = document.getElementById("new");
+		// alert(joker.innerHTML);
+		console.log(joker.innerHTML);
+
+		function eye () {
+			joker.innerHTML = "Ислам кошмарно шутит!! (c) Саида";
+		}
+
+		function red_text() {
+			joker.style.color = 'red';
+		}
+
+		function green_text() {
+			joker.style.color = 'green';
+		}
+	</script>
+</body>
+</html>
